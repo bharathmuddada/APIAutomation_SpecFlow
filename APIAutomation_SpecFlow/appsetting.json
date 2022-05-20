@@ -1,0 +1,9 @@
+{
+  "Base_urls": {
+
+    "reqres_url": "https://reqres.in",
+    "catfact_url": "https://catfact.ninja"
+
+
+  }
+}

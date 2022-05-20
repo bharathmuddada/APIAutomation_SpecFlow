@@ -3,6 +3,8 @@ using APIAutomationSpecFlow.Drivers;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Infrastructure;
 using Xunit.Abstractions;
+using Microsoft.Extensions.Configuration;
+
 
 namespace APIAutomationSpecFlow.Hooks
 {
@@ -21,21 +23,20 @@ namespace APIAutomationSpecFlow.Hooks
         [BeforeScenario()]
         public void InitializeDriver()
         {
+            var config_json = new ConfigurationBuilder().AddJsonFile("appsetting.json").Build();
+            var reqres_url = config_json.GetSection("Base_urls")["reqres_url"];
+            var catfact_url = config_json.GetSection("Base_urls")["catfact_url"];
+
             if (_scenarioContext.ScenarioInfo.Tags.Contains("reqres"))
             {
-                var searchservice_url = "https://reqres.in/";
 
-                _scenarioContext.Add("baseurl", searchservice_url);
-
-
+                _scenarioContext.Add("baseurl", reqres_url);
 
             }
-            if (_scenarioContext.ScenarioInfo.Tags.Contains("genderize"))
+            if (_scenarioContext.ScenarioInfo.Tags.Contains("catfact"))
             {
-                var catfact_url = "https://api.genderize.io/";
+               
                 _scenarioContext.Add("baseurl", catfact_url);
-
-
 
             }
 

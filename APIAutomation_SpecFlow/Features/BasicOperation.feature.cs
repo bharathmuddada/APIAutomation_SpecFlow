@@ -19,7 +19,7 @@ namespace APIAutomation_SpecFlow.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class BasicSearchOperationFeature : object, Xunit.IClassFixture<BasicSearchOperationFeature.FixtureData>, System.IDisposable
+    public partial class BasicTestOperationFeature : object, Xunit.IClassFixture<BasicTestOperationFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace APIAutomation_SpecFlow.Features
 #line 1 "BasicOperation.feature"
 #line hidden
         
-        public BasicSearchOperationFeature(BasicSearchOperationFeature.FixtureData fixtureData, APIAutomation_SpecFlow_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public BasicTestOperationFeature(BasicTestOperationFeature.FixtureData fixtureData, APIAutomation_SpecFlow_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace APIAutomation_SpecFlow.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Basic Search Operation", "tests endpoints in https://reqres.in/", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Basic test Operation", "tests endpoints in https://reqres.in/", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,16 +80,16 @@ namespace APIAutomation_SpecFlow.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="GET List of users")]
-        [Xunit.TraitAttribute("FeatureTitle", "Basic Search Operation")]
-        [Xunit.TraitAttribute("Description", "GET List of users")]
-        [Xunit.TraitAttribute("Category", "genderize")]
-        public virtual void GETListOfUsers()
+        [Xunit.SkippableFactAttribute(DisplayName="GET Single user from reqres")]
+        [Xunit.TraitAttribute("FeatureTitle", "Basic test Operation")]
+        [Xunit.TraitAttribute("Description", "GET Single user from reqres")]
+        [Xunit.TraitAttribute("Category", "reqres")]
+        public virtual void GETSingleUserFromReqres()
         {
             string[] tagsOfScenario = new string[] {
-                    "genderize"};
+                    "reqres"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GET List of users", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GET Single user from reqres", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -111,7 +111,7 @@ namespace APIAutomation_SpecFlow.Features
             {
                 this.ScenarioStart();
 #line 6
-        testRunner.Given("I perform a GET operation \"/?name=luc\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+        testRunner.Given("I perform a GET operation \"/api/users/2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
         testRunner.Then("Status code should be \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -120,16 +120,16 @@ namespace APIAutomation_SpecFlow.Features
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="GET Single User")]
-        [Xunit.TraitAttribute("FeatureTitle", "Basic Search Operation")]
-        [Xunit.TraitAttribute("Description", "GET Single User")]
-        [Xunit.TraitAttribute("Category", "reqres")]
-        public virtual void GETSingleUser()
+        [Xunit.SkippableFactAttribute(DisplayName="GET a catfact")]
+        [Xunit.TraitAttribute("FeatureTitle", "Basic test Operation")]
+        [Xunit.TraitAttribute("Description", "GET a catfact")]
+        [Xunit.TraitAttribute("Category", "catfact")]
+        public virtual void GETACatfact()
         {
             string[] tagsOfScenario = new string[] {
-                    "reqres"};
+                    "catfact"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GET Single User", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GET a catfact", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -151,7 +151,7 @@ namespace APIAutomation_SpecFlow.Features
             {
                 this.ScenarioStart();
 #line 11
-        testRunner.Given("I perform a GET operation \"/api/users/2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+        testRunner.Given("I perform a GET operation \"/fact\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 12
         testRunner.Then("Status code should be \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -167,12 +167,12 @@ namespace APIAutomation_SpecFlow.Features
             
             public FixtureData()
             {
-                BasicSearchOperationFeature.FeatureSetup();
+                BasicTestOperationFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                BasicSearchOperationFeature.FeatureTearDown();
+                BasicTestOperationFeature.FeatureTearDown();
             }
         }
     }
