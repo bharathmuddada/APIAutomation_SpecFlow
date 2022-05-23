@@ -156,6 +156,9 @@ namespace APIAutomation_SpecFlow.Features
 #line 12
         testRunner.Then("Status code should be \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 13
+        testRunner.Then("count of stores should be equal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

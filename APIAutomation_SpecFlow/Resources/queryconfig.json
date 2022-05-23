@@ -1,0 +1,9 @@
+{
+  "Sales_config": {
+
+    "Count_Sales": "Select count(*) as count from Sales.Store"
+
+
+
+  }
+}

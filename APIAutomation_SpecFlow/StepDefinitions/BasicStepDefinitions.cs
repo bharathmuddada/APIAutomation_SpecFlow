@@ -1,3 +1,4 @@
+using APIAutomation_SpecFlow.Drivers;
 using RestSharp;
 using TechTalk.SpecFlow.Infrastructure;
 
@@ -54,6 +55,14 @@ namespace APIAutomationSpecFlow.StepDefinitions
 
             var statuscode = _scenarioContext.Get<string>("GetStatusCode");
             statuscode.Should().Be(path);
+
+        }
+
+        [Then(@"count of stores should be equal")]
+        public void SqlCount()
+        {
+            var count =DBDriver.SqlTestData();
+            _output.WriteLine(count+"  Sales count");
 
         }
     }
